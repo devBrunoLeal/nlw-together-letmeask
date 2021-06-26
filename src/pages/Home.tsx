@@ -3,6 +3,7 @@ import { useHistory  } from 'react-router-dom';
 
 import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
+import logoImgDark from '../assets/images/logo-dark.svg';
 import googleIconImg from '../assets/images/google-icon.svg'
 
 import '../styles/auth.scss'
@@ -11,6 +12,7 @@ import { useAuth } from '../hooks/useAuth';
 import { FormEvent } from 'react';
 import { useState } from 'react';
 import { database } from '../services/firebase';
+import { useToasts } from 'react-toast-notifications';
 
 
 
@@ -19,7 +21,7 @@ export function Home(){
    const history = useHistory();
    const [roomCode, setRoomCode] = useState('')
    const {user, signInWithGoogle} = useAuth();
-
+   const {addToast} = useToasts();
 
 
    async function handleCreateRoom(){
@@ -36,18 +38,19 @@ export function Home(){
        event?.preventDefault();
 
        if(roomCode.trim() === ''){
+        addToast('Favor preencher o código da sala!', { appearance: 'warning' });
            return;
        }
 
        const roomRef = await database.ref('rooms/'+roomCode).get();
 
        if(!roomRef.exists()){
-           alert('Room does not existes.');
+        addToast('Sala inexistente!', { appearance: 'error' });
            return;
        }
 
        if(roomRef.val().endedAt){
-           alert('Room already closed.')
+        addToast('Essa sala já foi encerrada!', { appearance: 'warning' });
            return;
        }
 
@@ -66,7 +69,8 @@ export function Home(){
             </aside>
             <main>
                 <div className="main-content">
-                    <img src={logoImg} alt="Letmeask" />
+                    <img className="normal-logo" src={logoImg} alt="Letmeask" />
+                    <img className="dark-logo" src={logoImgDark} alt="Letmeask" />
                     <button onClick={handleCreateRoom} className="create-room">
                       <img src={googleIconImg} alt="Logo do Google" />
                       Crie sua sala com o Google   

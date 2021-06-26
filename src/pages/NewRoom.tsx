@@ -1,12 +1,14 @@
 import { Link, useHistory } from 'react-router-dom';
 import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
+import logoImgDark from '../assets/images/logo-dark.svg';
 import { FormEvent } from 'react';
 import '../styles/auth.scss'
 import { Button } from '../components/Button';
 import { useAuth } from '../hooks/useAuth';
 import { useState } from 'react';
 import { database } from '../services/firebase';
+import { useToasts } from 'react-toast-notifications';
 
 
 export function NewRoom(){
@@ -14,12 +16,14 @@ export function NewRoom(){
     const { user } = useAuth();
     const history = useHistory();
     const [newRoom, setNewRoom] = useState('');
+    const {addToast} = useToasts();
 
     async function handleCreateRoom(event: FormEvent){
     event.preventDefault();
 
 
     if(newRoom.trim() === ''){
+        addToast('O campo não pode ser vazio',{ appearance: 'warning'})
         return;
     }
 
@@ -29,7 +33,7 @@ export function NewRoom(){
         title: newRoom,
         authorId: user?.id, 
     });
-
+    addToast('Sala criada com sucesso!',{ appearance: 'success'})
     history.push("/rooms/"+firebaseRoom.key)
     }
 
@@ -43,7 +47,8 @@ export function NewRoom(){
             </aside>
             <main>
                 <div className="main-content">
-                    <img src={logoImg} alt="Letmeask" />
+                <img className="normal-logo" src={logoImg} alt="Letmeask" />
+                <img className="dark-logo" src={logoImgDark} alt="Letmeask" />
                     <h2>Criar uma nova sala</h2>
                    <form onSubmit={handleCreateRoom}>
                        <input

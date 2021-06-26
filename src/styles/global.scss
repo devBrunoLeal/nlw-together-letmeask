@@ -5,10 +5,89 @@
 }
 
 body{
+    word-wrap: break-word;
     background: #f8f8f8;
     color: #29292e;
+    position: relative;
 }
 
 body, input, button, textarea{
     font: 400 16px 'Roboto', sans-serif;
 }
+
+
+@media only screen and(max-width:880px){
+    body{
+        padding:0 16px 120px 16px;
+    }
+
+    #page-auth aside{
+        display: none;
+    }
+
+    #page-room header .content{
+        flex-direction: column;
+        gap:24px;
+    }
+}
+
+.dark-logo{
+    display: none;
+}
+
+.normal-logo{
+    display: block;
+}
+.dark-body{
+    background: #121212;
+
+    .dark-logo{
+        display: block;
+    }
+
+    .normal-logo{
+        display: none;
+    }
+    aside{
+        background: #1d1d1d !important;
+    }
+    #page-auth {
+
+        .create-room{
+        background: #1d1d1d !important;
+        }
+
+        a{
+            color: #585858 !important;
+        }
+    }
+
+    .question-list{
+        .question{
+            background: #1d1d1d;
+            p{
+               color: #FFF !important;
+            }
+        }
+
+        .answered{
+            background: #383838 !important;
+        }
+    }
+
+    #page-room{
+        textarea{
+            background: #1d1d1d !important;
+            color: #FFF !important;
+        
+        
+        
+        }
+    }
+
+    .room-code{
+        background: #1d1d1d !important;
+        color: #835afd !important; 
+    }
+}
+

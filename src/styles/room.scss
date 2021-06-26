@@ -4,7 +4,7 @@
       border-bottom: 1px solid #e2e2e2;
   
       .content {
-        max-width: 1120px;
+        max-width: 800px;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
@@ -38,6 +38,8 @@
           font-family: 'Poppins', sans-serif;
           font-size: 24px;
           color: #29292e;
+          max-width: 100%;
+          overflow: auto;
         }
   
         span {
@@ -108,5 +110,18 @@
       .question-list {
         margin-top: 32px;
       }
+    }
+
+    
+  }
+
+  .dark-body #page-room main .room-title h1{
+      color: #737373 !important;
+  } 
+  
+
+  @media only screen and (max-width: 730px){
+    .content div{
+       flex-direction: column !important;
     }
   }

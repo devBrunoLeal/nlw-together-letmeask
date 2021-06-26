@@ -5,14 +5,15 @@ import { NewRoom } from './pages/NewRoom'
 import { Room } from './pages/Room'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { AdminRoom } from './pages/AdminRoom';
-
+import { DarkButton } from './components/DarkButton';
 import {AuthContextProvider} from './contexts/AuthContext';
-
+import { ToastProvider} from 'react-toast-notifications';
 
 function App() {
 
   
   return (
+    <ToastProvider>
     <AuthContextProvider>
     <BrowserRouter>
     <Switch>
@@ -23,6 +24,9 @@ function App() {
     </Switch>
     </BrowserRouter>
     </AuthContextProvider>
+    <DarkButton></DarkButton>
+    </ToastProvider>
+   
   );
 }
 

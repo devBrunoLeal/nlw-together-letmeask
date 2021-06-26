@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { createContext, ReactNode, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import { useToasts } from "react-toast-notifications";
 import { auth, firebase } from "../services/firebase";
 
 type User = {
@@ -23,6 +25,8 @@ type User = {
   }
 export function AuthContextProvider(props: AuthContextProvederProps){
     const [user, setUser] = useState<User>();
+    const {addToast} = useToasts();
+    const history = useHistory();
 
     useEffect(() => {
       const unsubscribe = auth.onAuthStateChanged(user => {
@@ -30,7 +34,9 @@ export function AuthContextProvider(props: AuthContextProvederProps){
           const {displayName, photoURL, uid} = user;
           
           if(!displayName || !photoURL){
-            throw new Error('Missing information from Google Account.');
+           addToast('Dados do google faltando!', {appearance:'error'})
+           history.push('/')
+           return;
           }
   
           setUser({
@@ -45,7 +51,7 @@ export function AuthContextProvider(props: AuthContextProvederProps){
       return () => {
         unsubscribe();
       }
-    }, [])
+    }, [addToast, history])
   
     async function signInWithGoogle(){
       const provider = new firebase.auth.GoogleAuthProvider();

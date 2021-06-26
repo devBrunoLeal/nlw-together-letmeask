@@ -34,3 +34,18 @@
       cursor: not-allowed;
     }
   }
+
+  .arrow-back{
+    position: absolute;
+    left: 5px;
+    top: 106px;
+    font-size: 45px;
+    width: 47px;
+    height: 26px;
+    padding-bottom: 16px;
+  }
+  @media only screen and (max-width: 780px){
+    .arrow-back{
+      top: 4px !important;
+    }
+  }
