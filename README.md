@@ -2,26 +2,22 @@
     <img alt="Letmeask" title="Letmeask" src="https://user-images.githubusercontent.com/63220877/123501059-c48bfd80-d618-11eb-900a-16b312660d02.png" />
 </h1>
 
-<p align="center">
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-</p>
 
 <br>
 
-
-Tema Dark            |  Tema Light
-:-------------------------:|:-------------------------:
-![](https://user-images.githubusercontent.com/63220877/123501207-90650c80-d619-11eb-88c8-a249219f2b15.png)  |  ![](https://user-images.githubusercontent.com/63220877/123501121-0f0d7a00-d619-11eb-80a4-365b9fc80a9a.png)
 
 ## 💻 Projeto
 
 O Letmeask é uma aplicação de perguntas e respostas em tempo real utilizando o Realtime Database do firebase.
 
+Esse projeto foi desenvolvido na <b>NLW-6</b> Together ministrado pela <b>[Rocketseat](https://rocketseat.com.br/)</b>
+
+Tema Dark            |  Tema Light
+:-------------------------:|:-------------------------:
+![](https://user-images.githubusercontent.com/63220877/123501207-90650c80-d619-11eb-88c8-a249219f2b15.png)  |  ![](https://user-images.githubusercontent.com/63220877/123501121-0f0d7a00-d619-11eb-80a4-365b9fc80a9a.png)
+
 ## 🔖 Melhorias no projeto com base no aprendizado adquirido:
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - Sistema de notificações usando a lib: [React Toast Notifications](https://jossmac.github.io/react-toast-notifications/)
 - Ordenação de perguntas com base nos likes (Aparecem em primeiro o com mais like);
@@ -35,7 +31,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 Quando não há perguntas          |  Layout recursivo
 :-------------------------:|:-------------------------:
-![](https://user-images.githubusercontent.com/63220877/123501207-90650c80-d619-11eb-88c8-a249219f2b15.png)  |  ![](https://user-images.githubusercontent.com/63220877/123501121-0f0d7a00-d619-11eb-80a4-365b9fc80a9a.png)
+![](https://user-images.githubusercontent.com/63220877/123501498-c2776e00-d61b-11eb-9064-027d2729d273.png)  |  ![](https://user-images.githubusercontent.com/63220877/123501468-86440d80-d61b-11eb-8bed-fde9288a87ff.png)
 
 ## 🚀 Tecnologias
 
@@ -47,4 +43,3 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [TypeScript](https://www.typescriptlang.org/)
 
 
-Feito com ♥ by Rocketseat :wave: [Participe da nossa comunidade!](https://discordapp.com/invite/gCRAFhc)
