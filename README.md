@@ -10,7 +10,7 @@
 
 O Letmeask é uma aplicação de perguntas e respostas em tempo real utilizando o Realtime Database do firebase.
 <br>
-Link: <a href="https://letmeask-b8da7.firebaseapp.com/" target="_blank" rel="noopener"><span>Acessar o Letmeask</span> </a>.[Acessar o Letmeask](https://letmeask-b8da7.firebaseapp.com/)
+Link:[Acessar o Letmeask](https://letmeask-b8da7.firebaseapp.com/)
 
 Esse projeto foi desenvolvido na <b>NLW-6</b> Together ministrado pela <b>[Rocketseat](https://rocketseat.com.br/)</b>
 
