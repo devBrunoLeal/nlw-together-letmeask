@@ -5,6 +5,7 @@ import deleteImg from '../assets/images/delete.svg';
 import checkImg from '../assets/images/check.svg'
 import answerImg from '../assets/images/answer.svg'
 import logoImgDark from '../assets/images/logo-dark.svg';
+import noAnswer from '../assets/images/noAnswer.svg'
 
 import { Button } from '../components/Button';
 import { Question } from '../components/Question';
@@ -160,6 +161,7 @@ export function AdminRoom() {
               </Question>
             );
           })}
+           {questions.length === 0 && (<img src={noAnswer} alt="Sem resposta"></img>)}
         </div>
       </main>
     </div>

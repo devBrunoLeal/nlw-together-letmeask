@@ -5,6 +5,7 @@ import { useToasts } from 'react-toast-notifications';
 
 import logoImg from '../assets/images/logo.svg';
 import logoImgDark from '../assets/images/logo-dark.svg';
+import noAnswer from '../assets/images/noAnswer.svg'
 
 import { Button } from '../components/Button';
 import { Question } from '../components/Question';
@@ -138,7 +139,7 @@ export function Room() {
                 <span>{user.name}</span>
               </div>
             ) : (
-              <span>Para enviar uma pergunta, <button>faça seu login</button>.</span>
+              <span>Para enviar uma pergunta, <button onClick={() => { history.push('/')}}>faça seu login</button>.</span>
             ) }
             <Button type="submit" disabled={!user}>Enviar pergunta</Button>
           </div>
@@ -170,6 +171,8 @@ export function Room() {
               </Question>
             );
           })}
+
+          {questions.length === 0 && (<img src={noAnswer} alt="Sem resposta"></img>)}
         </div>
       </main>
     </div>
